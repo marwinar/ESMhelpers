@@ -41,18 +41,41 @@ omegaResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "omegaResults",
     inherit = jmvcore::Group,
     active = list(
-        text = function() private$.items[["text"]]),
+        text = function() private$.items[["text"]],
+        omega = function() private$.items[["omega"]]),
     private = list(),
     public=list(
         initialize=function(options) {
             super$initialize(
                 options=options,
                 name="",
-                title="Multilevel Reliability with Omega")
+                title="Multilevel Reliability Analysis")
             self$add(jmvcore::Preformatted$new(
                 options=options,
                 name="text",
-                title="Multilevel Reliability with Omega"))}))
+                title="Reliability"))
+            self$add(jmvcore::Table$new(
+                options=options,
+                name="omega",
+                title="Omega",
+                rows=2,
+                columns=list(
+                    list(
+                        `name`="label", 
+                        `title`="", 
+                        `type`="text"),
+                    list(
+                        `name`="estimate", 
+                        `title`="Estimate", 
+                        `type`="number"),
+                    list(
+                        `name`="ci.lower", 
+                        `title`="LL", 
+                        `type`="number"),
+                    list(
+                        `name`="ci.upper", 
+                        `title`="UL", 
+                        `type`="number"))))}))
 
 omegaBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
     "omegaBase",
@@ -84,7 +107,14 @@ omegaBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @return A results object containing:
 #' \tabular{llllll}{
 #'   \code{results$text} \tab \tab \tab \tab \tab a preformatted \cr
+#'   \code{results$omega} \tab \tab \tab \tab \tab a table \cr
 #' }
+#'
+#' Tables can be converted to data frames with \code{asDF} or \code{\link{as.data.frame}}. For example:
+#'
+#' \code{results$omega$asDF}
+#'
+#' \code{as.data.frame(results$omega)}
 #'
 #' @export
 omega <- function(

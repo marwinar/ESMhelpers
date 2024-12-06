@@ -1,11 +1,28 @@
 ---
 name:  omega
-title: Multilevel Reliability with Omega
+title: Multilevel Reliability Analysis
 jrs:   '1.1'
 
 items:
     - name:  text
-      title: Multilevel Reliability with Omega
+      title: Reliability
       type:  Preformatted
 
+    - name:  omega
+      title: Omega
+      type: Table
+      rows:  2
+      columns:
+        - name: label
+          title: ''
+          type: text
+        - name: estimate
+          title: 'Estimate'
+          type: number
+        - name: ci.lower
+          title: 'LL'
+          type: number
+        - name: ci.upper
+          title: 'UL'
+          type: number
 ...
