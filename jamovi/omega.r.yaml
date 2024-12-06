@@ -1,0 +1,11 @@
+---
+name:  omega
+title: Multilevel Reliability with Omega
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Multilevel Reliability with Omega
+      type:  Preformatted
+
+...

@@ -11,7 +11,12 @@ type: R
 description: >-
   More about what it does (maybe more than one line) Use four spaces when
   indenting paragraphs within the Description.
-analyses: []
+analyses:
+  - title: Multilevel Reliability with Omega
+    name: omega
+    ns: ESMhelpers
+    menuGroup: ESMhelpers
+    menuTitle: Multilevel Reliability with Omega
 usesNative: true
 minApp: 1.0.8
 

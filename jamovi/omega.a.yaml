@@ -1,0 +1,21 @@
+---
+name:  omega
+title: Multilevel Reliability with Omega
+menuGroup: ESMhelpers
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: items
+      title: Items
+      type: Variables
+      suggested: [continuous]
+
+    - name: group
+      title: Cluster Variable
+      type: Variable
+      suggested: [nominal]
+...
