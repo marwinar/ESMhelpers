@@ -56,8 +56,8 @@ ESMhelpers::omega(data = aces_daily,
 #>  ────────────────────────────────────────────────────────
 ```
 
-For comparison, this is how it would look in R with package
-multilevelTools:
+For comparison, this is how the same analysis would look in R with
+package multilevelTools:
 
 ``` r
 library(multilevelTools)
