@@ -6,7 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of ESMhelpers is to …
+The goal of ESMhelpers is to provide jamovi users access to a couple of
+R functions from existing R packages to use in multilevel analysis of
+experience sampling data.
 
 ## Installation
 
@@ -20,33 +22,39 @@ pak::pak("marwinar/ESMhelpers")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+How to calculate omega on within and between group level:
 
 ``` r
 library(ESMhelpers)
-## basic example code
+data(aces_daily, package = "JWileymisc")
+ESMhelpers::omega(data = aces_daily, 
+                  items = c("COPEPrb", "COPEPrc", "COPEExp"),
+                  group = "UserID")
+#> 
+#>  MULTILEVEL RELIABILITY ANALYSIS
+#> items: COPEPrb COPEPrc COPEExp
+#>  Omega                                                    
+#>  ──────────────────────────────────────────────────────── 
+#>                     Estimate     LL           UL          
+#>  ──────────────────────────────────────────────────────── 
+#>    omega within     0.7185961    0.6968023    0.7403899   
+#>    omega between    0.9083446    0.8836368    0.9330523   
+#>  ────────────────────────────────────────────────────────
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+For comparison, this is how it would look in R with package
+multilevelTools:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+library(multilevelTools)
+#> Warning: package 'multilevelTools' was built under R version 4.4.2
+omegaSEM(
+  items = c("COPEPrb", "COPEPrc", "COPEExp"),
+  id = "UserID",
+  data = aces_daily,
+  savemodel = FALSE)
+#> $Results
+#>            label   est ci.lower ci.upper
+#> 25  omega_within 0.719    0.697    0.740
+#> 28 omega_between 0.908    0.884    0.933
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

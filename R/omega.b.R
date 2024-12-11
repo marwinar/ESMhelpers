@@ -32,7 +32,7 @@ omegaClass <- if (requireNamespace('jmvcore', quietly = TRUE))
                   table$setRow(
                     rowNo = 1,
                     values = list(
-                      label = "omega within",
+                      label = stringr::str_replace_all(result[1, 'label'], "_", " "),
                       estimate = result[1,'est'],
                       ci.lower = result[1,'ci.lower'],
                       ci.upper = result[1,'ci.upper']
@@ -42,7 +42,7 @@ omegaClass <- if (requireNamespace('jmvcore', quietly = TRUE))
                   table$setRow(
                     rowNo = 2,
                     values = list(
-                      label = "omega between",
+                      label = stringr::str_replace_all(result[2, 'label'], "_", " "),
                       estimate = result[2,'est'],
                       ci.lower = result[2,'ci.lower'],
                       ci.upper = result[2,'ci.upper']

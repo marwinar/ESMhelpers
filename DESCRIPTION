@@ -1,17 +1,20 @@
 Package: ESMhelpers
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.0.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Reliability Analysis for Multilevel Data
+Version: 0.0.1
+Description: Statistics for hierarchical data with two levels: omega within
+  and between; between and within group correlation matrices
+Authors@R: 
+    person("Marielle", "Winarto", role = c("aut", "cre"), email = "mwinarto@gmail.com")
+Author: Marielle Winarto [aut, cre]
+Maintainer: Marielle Winarto <mwinarto@gmail.com>
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Imports: 
     jmvcore (>= 0.8.5),
     multilevelTools,
-    R6
+    R6,
+    stringr
 URL: https://github.com/marwinar/ESMhelpers
 BugReports: https://github.com/marwinar/ESMhelpers/issues
