@@ -24,6 +24,20 @@ pak::pak("marwinar/ESMhelpers")
 
 How to calculate omega on within and between group level:
 
+1.  Specify the items that make a scale.
+2.  Specify the cluster variable / grouping variable.
+
+![](images/clipboard-2598707398.png)
+
+### Jamovi output
+
+![](images/clipboard-3610476763.png)
+
+The output gives both omega within and omega between with a 95%
+confidence interval (LL = lower limit; UL: upper limit).
+
+### In R
+
 ``` r
 library(ESMhelpers)
 data(aces_daily, package = "JWileymisc")

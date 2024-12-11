@@ -98,7 +98,7 @@ omegaBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 weightsSupport = 'auto')
         }))
 
-#' Multilevel Reliability with Omega
+#' Multilevel Reliability
 #'
 #' 
 #' @param data .

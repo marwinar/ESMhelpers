@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 # ESMhelpers
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of ESMhelpers is to provide jamovi users access to a couple of R functions from existing R packages to use
-in multilevel analysis of experience sampling data.
+The goal of ESMhelpers is to provide jamovi users access to a couple of R functions from existing R packages to use in multilevel analysis of experience sampling data.
 
 ## Installation
 
@@ -33,6 +33,19 @@ pak::pak("marwinar/ESMhelpers")
 ## Example
 
 How to calculate omega on within and between group level:
+
+1.  Specify the items that make a scale.
+2.  Specify the cluster variable / grouping variable.
+
+![](images/clipboard-2598707398.png)
+
+### Jamovi output
+
+![](images/clipboard-3610476763.png)
+
+The output gives both omega within and omega between with a 95% confidence interval (LL = lower limit; UL: upper limit).
+
+### In R
 
 ```{r example}
 library(ESMhelpers)
@@ -53,4 +66,3 @@ omegaSEM(
   data = aces_daily,
   savemodel = FALSE)
 ```
-
