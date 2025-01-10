@@ -1,0 +1,26 @@
+---
+name:  correlations
+title: Correlation Matrix
+menuGroup: ESMhelpers
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: vars
+      title: Variables
+      type: Variables
+      suggested: [continuous]
+
+    - name: group
+      title: Cluster Variable
+      type: Variable
+      suggested: [nominal]
+
+    - name: flag
+      title: Flag significant correlations
+      type: Bool
+      default: false
+...

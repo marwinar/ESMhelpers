@@ -17,6 +17,11 @@ analyses:
     ns: ESMhelpers
     menuGroup: ESMhelpers
     menuTitle: Multilevel Reliability
+  - title: Correlation Matrix
+    name: correlations
+    ns: ESMhelpers
+    menuGroup: ESMhelpers
+    menuTitle: Correlation Matrix
 usesNative: true
 minApp: 1.0.8
 

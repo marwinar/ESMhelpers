@@ -1,0 +1,42 @@
+---
+name:  correlations
+title: Correlation Matrix
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Correlation Matrix
+      type:  Preformatted
+
+    - name: matrixbg
+      title: Correlation Matrix - Between Groups
+      type: Table
+      description: a correlation matrix table
+      rows: (vars)
+      clearWith:
+          - flag
+
+      columns:
+          - name: .name[r]
+            title: ""
+            type: text
+            content: ($key)
+            combineBelow: true
+            visible: true
+
+    - name: matrixwg
+      title: Correlation Matrix - Within Groups
+      type: Table
+      description: a correlation matrix table
+      rows: (vars)
+      clearWith:
+          - flag
+
+      columns:
+          - name: .name[r]
+            title: ""
+            type: text
+            content: ($key)
+            combineBelow: true
+            visible: true
+...
